@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>table tag</title>
+<style>
+div{
+border:solid;
+width:100px;
+height:100px;
+display:inline-block;
+text-align:center;
+padding:50px;
+
+margin:20px 10px 25px 25px;;
+}
+</style>
+</head>
+<body>
+<div style="background-color:red;" onclick="changeColor(this)">First Box</div>
+<div style="background-color:blue;" onclick="changeColor(this)">Second Box</div>
+<div style="background-color:green;" onclick="changeColor(this)">Third Box</div>
+<div style="background-color:yellow;" onclick="changeColor(this)">Fourth Box</div>
+<script>
+function changeColor(temp){
+temp.style.position="relative";
+temp.style.top="100px";
+
+
+}
+</script>
+</body>
+</html>

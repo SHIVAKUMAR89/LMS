@@ -1,0 +1,59 @@
+<!DOCTYPE  html>
+<html>
+<head><title>form</title></head>
+<body>
+<form name="basicform" method="GET">
+     <table border="0" align="center" cellpadding="5">
+      <tr>
+	     <td><label>Name</label></td>
+		 <td><input type="text" placeholder="name" id="id1" /></td>
+	  </tr>	 
+	  <tr> 
+		 <td><label>repeat name</label></td>
+		 <td><input type="text" placeholder="enter name" id="id2" /></td>
+		 
+	  </tr>
+	  <tr>
+	    <td><label>Residential Address</label></td>
+		<td><input type="textarea" id="ad1" placeholder="ënter address" /></td>
+	</tr>
+	<tr>
+	   <td><input type="checkbox"  id="g1" name="show address" value="Address" onclick="checkadd()" "checked"/>same as above
+	   </td>
+	   </tr>
+	  
+	<tr>
+	    <td><label>Permanent Address</label></td>
+		<td><input type="textarea" id="add2" placeholder="enter address"/></td>
+	</tr>
+	   <script src="C:\Users\Shiv\Desktop\FS Examples\javascript\jquery/jquery-3.3.1.min.js"></script>
+	  <script>
+	  $(document).ready(function() {
+    $('#id1').keypress(function(e) {
+        var txtVal = $(this).val();
+        $('#id2').val(txtVal);
+    });
+    
+    $('#id2').keypress(function(e) {
+        var txtVal = $(this).val();
+        $('#id1').val(txtVal);
+    });
+});
+
+function checkadd()
+{
+var a=document.getElementById("ad1").value;
+var y=document.getElementById("g1");
+if(y.checked)
+{
+document.getElementById("add2").value=a;
+}
+else
+{
+document.getElementById("add2").value=empty;
+}
+}
+
+	</script>
+	</body>
+	</html>

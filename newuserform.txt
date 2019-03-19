@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registration</title>
+</head>
+<body>
+<form id="form" name="form" method="post" action="registration.php"> 
+    <label for="username">Username : </label>
+    <input name="username" id="username" type="text" /></label><br/>
+
+    <label for="password">Password :</label> 
+    <input name="password" id="password" type="password" /><br/>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" name="confirm_password" id="confirm_password" /><br/>
+	<input type="password" name="password" id="password" onchange='check_pass();'/>
+	<input type="password" name="confirm_password" id="confirm_password" onchange='check_pass();'/>
+	<input type="submit" name="submit"  value="registration"  id="submit" disabled/>
+	<script>
+	function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+        document.getElementById('submit').disabled = false;
+    } else {
+        document.getElementById('submit').disabled = true;
+    }
+}
+	</script>
+</form>
+</body>
+</html>

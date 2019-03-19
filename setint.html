@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><title>table tag</title>
+<style>
+div{
+border:solid;
+width:100px;
+height:100px;
+display:inline-block;
+text-align:center;
+
+
+margin:20px 10px 25px 25px;;
+border-radius:200px;
+}
+</style>
+</head>
+<body>
+
+<div style="background-color:red;" onclick="changeColor(this)"></div>
+<div style="background-color:blue;" onclick="changeColor(this)"> </div>
+<div style="background-color:green;" onclick="changeColor(this)"></div>
+<div style="background-color:yellow;" onclick="changeColor(this)"></div>
+<input type="button" value="start" onclick="bounce(temp)"/>
+<script>
+
+function changeColor(temp) {
+ var a=setInterval(bounce,1000,temp);
+}
+var flag=true;
+function bounce(temp)
+{
+if(flag)
+{
+temp.style.position="relative";
+temp.style.top="200px";
+flag=false;
+}
+else
+{
+temp.style.position="relative";
+temp.style.top="0px";
+flag=true;
+}
+}
+
+</script>
+</body>
+</html>

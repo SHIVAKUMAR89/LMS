@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+First Number<input type="text" id="id1" name="id1" /><br><br>
+Second Number<input type="text" id="id2" name="id1" /><br>
+<input type="button" value="Add" onclick="callMe()"/>
+<span id='id1'></span>
+<span id='id2'></span>
+
+<script>
+function callMe(){
+var x=document.getElementById("id1").value;
+var y=document.getElementById("id2").value;
+var z= parseInt(x)+parseInt(y);
+console.log(z);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>hello world</title>
+
+	</head>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+<body>
+
+<p onclick="function()">My Paragraph</p>
+<p>My paragraph</p>
+<p>My paragraph</p>
+<script>
+$(document).ready(function()
+{
+$("p").click(function(){
+console.log("clicked");
+console.log($(this).text());
+$(this).css("background-color","blue");
+$(this).attr("title","my title");
+});
+});
+</script>
+</body>
+</html>

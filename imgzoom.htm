@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>zoom in zoom out</title>
+
+	</head>
+<body>
+<center><img src="E:/legato"></center>
+<input button="submit" value="zoomin" onclick="zoomin()"/>
+<input button="submit" value="zoomout" onclick="zoomout()"/>
+<script>
+function zoomin(){
+        var myImg = document.getElementById("map");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 2500) return false;
+         else{
+            myImg.style.width = (currWidth + 100) + "px";
+        } 
+    }
+    function zoomout(){
+        var myImg = document.getElementById("map");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 100) return false;
+		 else{
+            myImg.style.width = (currWidth - 100) + "px";
+        }
+    }
+	</script>
+
+</body>
+</html>

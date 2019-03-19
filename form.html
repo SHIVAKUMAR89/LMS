@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head><title>Employee Registration</title>
+</head>
+<body>
+<!--Sample html page-->
+<form name="myForm" method="POST" onsubmit="return validateForm()">
+  <table align="center" border="0"	 cellpadding="5">
+    <tr>
+      <td><label>Employee Name:</label></td>
+      <td><input type="text"  id="id1" name="firstName" placeholder="Please enter name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/></td>
+
+	  <span id='display1'></span>
+    </tr>
+    <tr>
+      <td><label>Employee Password:</label></td>
+      <td><input type="password" id="id2" placeholder="Enter password" pattern="[A-Za-z0-9]{4,}"/></td>
+	  <span id='display2'></span>
+    </tr>
+    <tr>
+      <td><label>Employee Gender:</label></td>
+      <td> <input type="radio"   onchange="showInputrdo()"  name="gender" value="male" "checked" class="rdobtn"> Male
+  <input type="radio" name="gender"  value="female"  class="rdobtn"> Female
+  <input type="radio" name="gender" value="other"  class="rdobtn"> Other  <br>
+  <input type="button" onclick="validateRadio()" value="gender">
+  <br><br>
+  <input type="text" id="rdo" size="50">
+   <span class='rdobtn'></span>
+  <span class='rdobtn'></span><br>
+
+    </tr>
+ 
+    <tr>
+      <td><label>Cities lived in:</label></td>
+      <td><input type="checkbox" name="city1" class="b" value="banglore"  "checked"/>
+        Banglore
+		<input type="checkbox" name="city2" class="b" value="chennai" "checked"/>
+        Chennai
+		<input type="checkbox" name="city3" class="b" value="delhi" "checked"/>
+        Delhi
+		<input type="checkbox" name="city4" class="b" value="kolkata" "checked"/>
+        Kolkata
+		 <span class='b'></span>
+		<span class='b'></span>
+		<span class='b'></span>
+		 <span class='b'></span>
+        </td>
+    </tr>
+    <tr>
+      <td>
+      <label>
+      Address:
+      </label>
+      </td>
+      <td><textarea rows="5" cols="10" name="Address"></textarea></td>
+    </tr>
+	<tr>
+	<td><label>Technologies</label></td>
+	<td><select name="Tech" class="a" id="c1" onchange="showInputdrop()" onchange="showInputchange(this)">
+	<option  class="a">Please Select</option>
+	  <option value="html"class="a">HTML</option>
+	  <option value="css"class="a">CSS</option>
+	  <option value="php"class="a">PHP</option>
+	  <option value="js"class="a">JS</option>
+	  </select>
+	   <span class='a'></span>
+		<span class='a'></span>
+		<span class='a'></span>
+		<span id='c1'></span>
+		<span id='disp'></span>
+		<p class="demo"></p></td>
+		
+	 
+    </tr>
+	<tr>
+	 <td><label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required ></td>
+
+    <td><label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required></td>
+	</tr>
+	
+	<tr>
+      <td><input type="submit" value="Submit form">
+        <input type="Reset" value="reset form">
+		<input type="button" value="click me" onclick="showInputchange(this)"><br>
+		<span class='rdobtn'></span>
+		<span class='rdobtn'></span>
+		<span class='rdobtn'></span>
+    </tr>
+	
+  </table>
+  
+</form>
+<script>
+
+function display(){ 
+document.getElementById('display1').innerHTML = document.getElementById("id1").value;
+document.getElementById('display2').innerHTML = document.getElementById("id2").value;
+}
+function validateForm() {
+  var x = document.forms["myForm"]["firstName"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+function showInputrdo(){
+var arr=document.getElementsByClassName("rdobtn")
+var radioValue="";
+for(var i=0;i<arr.length;i++){
+if(arr[i].checked){
+console.log(arr[i].value);
+break;
+}
+}
+}
+
+function validateRadio() {
+  var arr1 = document.forms[0];
+  var arr2 = "";
+  var i;
+  for (i = 0; i < arr1.length; i++) {
+    if (arr1[i].checked) {
+      arr2 = arr2 + arr1[i].value + " ";
+    }
+  }
+  document.getElementById("rdo").value = "You Selected any gender " + arr2;
+}
+
+function showInputdrop(){
+var b=document.getElementsByClassName("a")
+var disp="";
+for(var i=0;i<b.length;i++){
+if(b[i].selected){
+console.log(b[i].value);
+
+}
+}
+}
+
+function showInputcheck(){
+var b=document.getElementsByClassName("b")
+var disp="";
+for(var i=0;i<b.length;i++){
+if(b[i].checked){
+console.log(b[i].value);
+}
+}
+}
+function showInputchange(temp){
+ var x = document.getElementById("c1").value;
+  document.getElementById("disp").innerHTML = "You selected: " + x;
+  var val=temp.value;
+  var pattern="^[A_Za-z]+$";
+  if(val.match(pattern)!=null)
+  console.log(val[pattern].value);
+  else
+  alert("please select anyone");
+  
+}
+</script>
+</body>
+</html>

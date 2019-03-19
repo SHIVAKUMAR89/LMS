@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head><title>Employee Registration</title>
+</head>
+
+<body>
+<!--Sample html page-->
+<form name="myForm" method="POST" onsubmit="return validateForm()">
+  <table align="center" border="0"	 cellpadding="5">
+    <tr>
+      <td><label>Employee Name:</label></td>
+      <td><input type="text"  id="id1" name="firstName" placeholder="Please enter name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/></td>
+
+	  <span id='display1'></span>
+    </tr>
+    <tr>
+      <td><label>Employee Password:</label></td>
+      <td><input type="password" id="id2" placeholder="Enter password" pattern="[A-Za-z0-9]{4,}"/></td>
+	  <span id='display2'></span>
+    </tr>
+    <tr>
+      <td><label>Employee Gender:</label></td>
+      <td> <input type="radio"     name="gender" value="male" "checked"> Male
+  <input type="radio" name="gender"  value="female"> Female
+  <input type="radio" name="gender" value="other"> Other <br>
+
+    </tr>
+ 
+    <tr>
+      <td><label>Cities lived in:</label></td>
+      <td><input type="checkbox" name="city1" class="b" value="banglore"  "checked"/>
+        Banglore
+		<input type="checkbox" name="city2" class="b" value="chennai" "checked"/>
+        Chennai
+		<input type="checkbox" name="city3" class="b" value="delhi" "checked"/>
+        Delhi
+		<input type="checkbox" name="city4" class="b" value="kolkata" "checked"/>
+        Kolkata
+		 <span class='b'></span>
+		<span class='b'></span>
+		<span class='b'></span>
+		 <span class='b'></span>
+        </td>
+    </tr>
+    <tr>
+      <td>
+      <label>
+      Address:
+      </label>
+      </td>
+      <td><textarea rows="5" cols="10" name="Address"></textarea></td>
+    </tr>
+	<tr>
+	<td><label>Technologies</label></td>
+	<td><select name="Tech" onchange="showInputdrop()" onchange="showInputchange(this)">
+	<option  class="a">Please Select</option>
+	  <option value="html">HTML</option>
+	  <option value="css">CSS</option>
+	  <option value="php">PHP</option>
+	  <option value="js">JS</option>
+	  </select>
+
+	 
+    </tr>
+	<tr>
+	 <td><label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required ></td>
+
+    <td><label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required></td>
+	</tr>
+	
+	<tr>
+     <td> <input type="submit" value="Submit Form"/>
+	<input type="reset" value="Reset Form"/>
+	<input type="button" value="Click Me"/>
+	<span id="sp1"></span></td>
+
+    </tr>
+	
+  </table>
+  
+</form>
+<script src="C:\Users\Shiv\Desktop\FS Examples\javascript\jquery/jquery-3.3.1.min.js"></script>
+<<script>
+/*	function callMe(){
+		console.log("On Foused");
+	}
+	function callMe1(){
+		console.log("On Blur");
+	}
+	*/
+	$(document).ready	(function(){
+		$("input[type=button]").click(function(){
+		var result="";
+		result="Your name is"+$("input[type=text]").val();
+		result= result+"Selected gender is:"+$("input[type=radio]:checked").val();
+		
+		/*var ele=$("input[type=checkbox]:checked")
+		for(var i=0;i<ele.length;i++){
+			console.log(ele[i].value);
+		}*/
+		var chk="";
+		$("input[type=checkbox]:checked").each(
+			function(){
+				chk=chk+","+$(this).val()
+				});
+		result=result+"Cities you have lived in are: "+chk;
+			$("span").text(result);
+			
+		var sel="";
+		$("option:selected").each(
+			function(){
+				sel=sel+","+$(this).val()
+				});
+		result=result+"Technologies known: "+sel;
+			$("span").text(result);
+		
+		});
+
+	
+	});
+
+/*function validateForm() {
+  var x = document.forms["myForm"]["firstName"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}*/
+
+
+ 
+</script>
+</body>
+</html>

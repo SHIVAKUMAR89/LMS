@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>zoom in zoom out</title>
+
+	</head>
+<body>
+<center><img src="C:\Users\Shiv\Desktop\images/04.jpg" id="map" onclick="zoomin()" ><br>
+<input type="button" value="zoomin" id="map1" onclick="zoomin()" />
+<input type="button" value="zoomout" id="map2" onclick="zoomout()"/></center>
+<script>
+function zoomin(){
+        var myImg = document.getElementById("map");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 2500) return false;
+         else{
+            myImg.style.width = (currWidth + 100) + "px";
+        } 
+    }
+    function zoomout(){
+        var myImg = document.getElementById("map");
+        var currWidth = myImg.clientWidth;
+        if(currWidth == 100) return false;
+		 else{
+            myImg.style.width = (currWidth - 100) + "px";
+        }
+    }
+	</script>
+
+</body>
+</html>

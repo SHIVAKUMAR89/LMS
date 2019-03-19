@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registration</title>
+</head>
+<body>
+<!--Sample html page-->
+<form name="myForm" method="POST" onsubmit="return validateForm()">
+  <table align="center" border="0"	 cellpadding="5">
+    <tr>
+      <td><label>User Name:</label></td>
+      <td><input type="text"  id="id1" name="firstName" placeholder="Please enter name" pattern="[A-Z]{1}[a-z ]+[A-Z]{1}[a-z]+"/></td>
+    </tr>
+    <tr>
+      <td><label>User Password:</label></td>
+      <td><input type="password" id="id2" placeholder="Enter password" pattern="[A-Za-z0-9]{4,}"/></td>
+	  
+    </tr>
+	</form>
+	</body>
+	</html>
